@@ -16,28 +16,44 @@
       <h1 class="todo__heading">Todo</h1>
       <button class="btn btn--primary btn--block todo__add-btn">Add</button>
     </div>
-    <div class="get-form">
-      <form class="card card--shadow form">
+    <form class="card card--shadow form get-form">
 
-        <field class="text">
-          <label for="highlight_text">Highlight Text</label>
-          <input type="text">
-        </field>
-        <field class="text">
-          <label for="color">Color</label>
-          <input type="color">
-        </field>
+      <field class="form__field">
+        <label for="highlight_text">Highlight Text</label>
+        <input type="text">
+      </field>
+      <field class="form__field">
+        <label for="color">Color</label>
+        <input type="color">
+      </field>
 
-        <field class="text">
-          <label for="content">Content</label>
-          <input type="text">
-        </field>
+      <field class="form__field">
+        <label for="content">Content</label>
+        <input type="text">
+      </field>
 
-        <div class="card__btn"><button class="btn btn--secondary ">Save</button><button
-            class="btn btn--primary">Cancel</button></div>
-      </form>
-    </div>
+
+      <div class="form__btn card__btn"><button class="btn btn--secondary ">Save</button><button
+          class="btn btn--primary">Cancel</button></div>
+    </form>
+
+    <ul class="list todo__result">
+      <li class="todo__item">
+        <section class="card card--shadow">
+          <p>Lorem ipsum dolor sit amet.</p>
+          <p>Lorem ipsum dolor sit amet.</p>
+
+          <div class="card__btn">
+            <button class="btn btn--secondary">Update</button>
+            <button class="btn btn--primary">Delete</button>
+
+          </div>
+        </section>
+      </li>
+    </ul>
   </div>
+
+
   <script src="./js/script.js"></script>
 </body>
 

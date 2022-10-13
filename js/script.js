@@ -1,9 +1,7 @@
-//console.log("Hello");
+const addBtn = document.querySelector(".todo__add-btn");
 
+const getForm=document.querySelector('.form')
 
-let obj = {
-  name: 'Aftab',
-  age:'21'
-}
-
-let arr = [10, 12, 14];
+addBtn.onclick = () => {
+ getForm.classList.toggle('get-form')
+};
