@@ -32,3 +32,20 @@ body {
 .btn--secondary {
   background: var(--color-secondary);
 }
+
+/* card styles */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+.card--shadow {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+.card__btn {
+  align-self: flex-end;
+}
