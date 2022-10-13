@@ -7,10 +7,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Todo</title>
   <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/normalize.css">
 </head>
 
 <body>
- 
+  <div class="container todo">
+    <div class="todo__header">
+      <h1 class="todo__heading">Todo</h1>
+      <button class="btn btn--primary btn--block todo__add-btn">Add</button>
+    </div>
+    <div class="get-form">
+      <form class="card card--shadow form">
+
+        <field class="text">
+          <label for="highlight_text">Highlight Text</label>
+          <input type="text">
+        </field>
+        <field class="text">
+          <label for="color">Color</label>
+          <input type="color">
+        </field>
+
+        <field class="text">
+          <label for="content">Content</label>
+          <input type="text">
+        </field>
+
+        <div class="card__btn"><button class="btn btn--secondary ">Save</button><button
+            class="btn btn--primary">Cancel</button></div>
+      </form>
+    </div>
+  </div>
   <script src="./js/script.js"></script>
 </body>
 
