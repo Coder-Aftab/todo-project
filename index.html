@@ -5,53 +5,45 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="Author" content="Md Aftab">
+  <meta name="description" content="Todo List">
   <title>Todo</title>
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/normalize.css">
 </head>
 
 <body>
-  <div class="container todo">
-    <div class="todo__header">
-      <h1 class="todo__heading">Todo</h1>
-      <button class="btn btn--primary btn--block todo__add-btn">Add</button>
-    </div>
-    <form class="card card--shadow form get-form">
+  <main class="container">
+    <section class="todo">
+      <header class="todo__header">
+        <h1 class="todo__heading">Todo</h1>
+        <button class="btn btn--primary btn--block todo__add-btn">Add</button>
+      </header>
+      <form class="card card--shadow form get-form">
 
-      <field class="form__field">
-        <label for="highlight_text">Highlight Text</label>
-        <input type="text">
-      </field>
-      <field class="form__field">
-        <label for="color">Color</label>
-        <input type="color">
-      </field>
+        <field class="form__field">
+          <label for="highlight_text">Highlight Text</label>
+          <input type="text">
+        </field>
+        <field class="form__field">
+          <label for="color">Color</label>
+          <input type="color" value="#e8657b">
+        </field>
 
-      <field class="form__field">
-        <label for="content">Content</label>
-        <input type="text">
-      </field>
-
-
-      <div class="form__btn card__btn"><button class="btn btn--secondary ">Save</button><button
-          class="btn btn--primary">Cancel</button></div>
-    </form>
-
-    <ul class="list todo__result">
-      <li class="todo__item">
-        <section class="card card--shadow">
-          <p>Lorem ipsum dolor sit amet.</p>
-          <p>Lorem ipsum dolor sit amet.</p>
-
-          <div class="card__btn">
-            <button class="btn btn--secondary">Update</button>
-            <button class="btn btn--primary">Delete</button>
-
-          </div>
-        </section>
-      </li>
-    </ul>
-  </div>
+        <field class="form__field">
+          <label for="content">Content</label>
+          <input type="text">
+        </field>
+        <div class="form__btn card__btn">
+          <button type="submit" class="btn btn--secondary btn-save">Save</button>
+          <button type="button" class="btn btn--primary btn-cancel">Cancel</button>
+        </div>
+      </form>
+      <!-- Todo Items -->
+      <ul class="list todo__items">
+      </ul>
+    </section>
+  </main>
 
 
   <script src="./js/script.js"></script>

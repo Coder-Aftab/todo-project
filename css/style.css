@@ -63,12 +63,14 @@ body {
   display: flex;
   align-self: center;
 }
+@media screen and (min-width: 540px) {
+  .card__btn {
+    align-self: flex-end;
+  }
+}
 @media screen and (min-width: 768px) {
   .card {
-    width: 80%;
-  }
-  .card__btn{
-    align-self: flex-end;
+    max-width: 80%;
   }
 }
 
@@ -105,13 +107,13 @@ body {
   display: inline-block;
 }
 
-.todo__item{
+.todo__item {
   width: 100%;
   display: flex;
   justify-content: center;
   margin: 3rem 0;
 }
-.todo__result {
+.todo__items {
   margin: 0;
   display: flex;
   flex-direction: column;
@@ -122,6 +124,7 @@ body {
 @media screen and (min-width: 480px) {
   .todo__header {
     flex-direction: row;
+    padding: 2rem;
   }
 }
 
