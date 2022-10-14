@@ -10,7 +10,6 @@ const save = document.querySelector(".btn-save");
 //get cancel btn
 const cancel = document.querySelector(".btn-cancel");
 
-
 //handle the Add of Todo
 addBtn.addEventListener("click", handleCancel);
 
@@ -28,7 +27,7 @@ let todoItems = [];
 function renderTodo(todoItem) {
   //storing in local storage
   localStorage.setItem("todoData", JSON.stringify(todoItems));
-  //console.log(todoItems);
+
   //get result
   const setTodo = document.querySelector(".todo__items");
 
@@ -86,9 +85,8 @@ function deleteTodo(key) {
 }
 
 function updateTodo(key) {
-  const index = todoItems.findIndex(item=>item.id==Number(key))
+  const index = todoItems.findIndex((item) => item.id == Number(key));
   const setForm = Object.values(getForm);
-  //console.log(todoItems);
   setForm[0].value = todoItems[index].content;
   setForm[1].value = todoItems[index].color;
   setForm[2].value = todoItems[index].text;
@@ -104,7 +102,7 @@ function addTodoItem(content, color, text, id) {
     text,
     id,
   };
-  console.log(id)
+  console.log(id);
   if (id) {
     todoItem.id = id;
     todoItems = todoItems.filter((item) => item.id != Number(id));
@@ -113,7 +111,6 @@ function addTodoItem(content, color, text, id) {
   }
 
   todoItems.push(todoItem);
-  //console.log(todoItem);
   renderTodo(todoItem);
 }
 
@@ -125,7 +122,10 @@ let getData = (e) => {
       const value = item.value;
 
       if (item.id) {
-        return item.id;
+
+        const id=item.id
+        item.id = "";
+        return id;
       }
       if (value.includes("#")) {
         item.value = "#e8657b";
@@ -139,10 +139,9 @@ let getData = (e) => {
 };
 
 save.addEventListener("click", getData);
-
+//restore data after refresh
 document.addEventListener("DOMContentLoaded", (e) => {
   const res = localStorage.getItem("todoData");
-  //console.log(res);
   if (res) {
     const data = JSON.parse(res);
     data.forEach((item) => {
@@ -154,6 +153,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
 
 //get hold of clicked todo
 const list = document.querySelector(".todo__items");
+//get the event of delete and update
 list.addEventListener("click", (event) => {
   //update todo
   if (event.target.classList.contains("btn-update")) {
