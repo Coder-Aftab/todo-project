@@ -121,6 +121,10 @@ body {
   align-items: center;
 }
 
+.todo__item a{
+  text-decoration: none;
+  color: #222;
+}
 @media screen and (min-width: 480px) {
   .todo__header {
     flex-direction: row;

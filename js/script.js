@@ -6,10 +6,10 @@ const getForm = document.querySelector(".form");
 
 //get save btn
 const save = document.querySelector(".btn-save");
+
 //get cancel btn
 const cancel = document.querySelector(".btn-cancel");
 
-//get delete
 
 //handle the Add of Todo
 addBtn.addEventListener("click", handleCancel);
@@ -37,10 +37,9 @@ function renderTodo(todoItem) {
   // add this if block
   if (todoItem.deleted) {
     //console.log(todoItem.id);
-    if (setTodo) {
-      // remove the item from the DOM
-      item.remove();
-    }
+    item.remove();
+    if (todoItems.length === 0) setTodo.innerHTML = "";
+
     return;
   }
   const node = document.createElement("li");
@@ -52,7 +51,7 @@ function renderTodo(todoItem) {
 
   let updatedText = highlightArr.reduce((acc, cur) => {
     if (cur == todoItem.content) {
-      acc += `<span style='color:${todoItem.color}'>${todoItem.content}</span>`;
+      acc += `<span style='color:${todoItem.color};font-weight:500'>${todoItem.content}</span>`;
     } else {
       acc += cur;
     }
@@ -73,12 +72,11 @@ function renderTodo(todoItem) {
     setTodo.replaceChild(node, item);
   } else {
     setTodo.append(node);
-    //push into data structure
   }
 }
 
 function deleteTodo(key) {
-  const index = todoItems.findIndex((item) => item.id === Number(key));
+  const index = todoItems.findIndex((item) => item.id == Number(key));
   const todo = {
     deleted: true,
     ...todoItems[index],
@@ -88,10 +86,9 @@ function deleteTodo(key) {
 }
 
 function updateTodo(key) {
-  const index = todoItems.findIndex((item) => item.id === Number(key));
-  
+  const index = todoItems.findIndex(item=>item.id==Number(key))
   const setForm = Object.values(getForm);
-  console.log(todoItems);
+  //console.log(todoItems);
   setForm[0].value = todoItems[index].content;
   setForm[1].value = todoItems[index].color;
   setForm[2].value = todoItems[index].text;
@@ -101,13 +98,13 @@ function updateTodo(key) {
 }
 
 function addTodoItem(content, color, text, id) {
-  console.log(content, color, text, id);
   let todoItem = {
     content,
     color,
     text,
     id,
   };
+  console.log(id)
   if (id) {
     todoItem.id = id;
     todoItems = todoItems.filter((item) => item.id != Number(id));
