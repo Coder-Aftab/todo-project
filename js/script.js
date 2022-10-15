@@ -52,10 +52,14 @@ function renderTodo(todoItem) {
   node.setAttribute("data-key", todoItem.id);
   //separate all the words based on space after
   const highlightArr = todoItem.text.split(/(\s+)/);
+  console.log(highlightArr)
   //update the text according to the color
   let updatedText = highlightArr.reduce((acc, cur) => {
-    if (cur == todoItem.content) {
-      acc += `<span style='color:${todoItem.color};font-weight:500'>${todoItem.content}</span>`;
+    if (cur.includes(todoItem.content)) {
+      acc += `${cur.replace(
+        `${todoItem.content}`,
+        `<span style='color:${todoItem.color};font-weight:500'>${todoItem.content}</span>`
+      )}`;
     } else {
       acc += cur;
     }
